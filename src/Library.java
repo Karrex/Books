@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Library {
     public static void readBooks(File f) {
@@ -10,6 +11,7 @@ public class Library {
                 String[] book = s.split(";");
                 books.add(new Book(book[0], book[1], Integer.parseInt(book[2])));
             }
+            Collections.sort(books);
             System.out.println(books);
         } catch (IOException e) {
             e.printStackTrace();
